@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title class="keyboard_name"></title>
+	<link rel="stylesheet" type="text/css" href="./external/bootstrap.min.css">
+	<script src="./external/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row" style="margin-top: 3%">
+			<div class="col-md-2">
+				<a class="btn btn-primary" href="./index.html">Back</a>
+				<div class="row">
+					<div class="col-md-12">
+						<h1><time>00:00:00</time></h1>
+						<button id="start">Start</button>
+						<button id="stop">Stop</button>
+						<button id="clear">Clear</button>
+					</div>
+					<div class="col-md-12" style="margin-top: 30%;">
+						<h4>Distance: <span id="distance">0</span></h4>
+					</div>
+					<div class="col-md-12">
+							<h4>Net Word: <span id="net_word">0</span></h4>
+					</div>
+					<div class="col-md-12">
+							<h4>NWPM: <span id="net_word_per_min">0</span></h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<h2 style="text-align: center" class="keyboard_name"></h2>
+				<textarea id="keyboard_output" class="form-control col-md-11"></textarea>
+				<div id="keyboard" style="margin-top: 3%">
+					<div class="row">
+						<button class="col-md-2" style="margin-left: 2.5%">U</button>
+						<button class="col-md-2" style="margin-left: 1%">P</button>
+						<button class="col-md-2" style="margin-left: 1%">K</button>
+						<button class="col-md-2" style="margin-left: 1%">F</button>
+						<button class="col-md-2" style="margin-left: 1%">A</button>
+					</div>
+
+					<div class="row" style="margin-top: 1%">
+						<button class="col-md-2" style="margin-left: 2.5%">V</button>
+						<button class="col-md-2" style="margin-left: 1%">Q</button>
+						<button class="col-md-2" style="margin-left: 1%">L</button>
+						<button class="col-md-2" style="margin-left: 1%">G</button>
+						<button class="col-md-2" style="margin-left: 1%">B</button>
+					</div>
+
+					<div class="row" style="margin-top: 1%">
+						<button class="col-md-2" style="margin-left: 2.5%">W</button>
+						<button class="col-md-2" style="margin-left: 1%">R</button>
+						<button class="col-md-2" style="margin-left: 1%">M</button>
+						<button class="col-md-2" style="margin-left: 1%">H</button>
+						<button class="col-md-2" style="margin-left: 1%">C</button>
+					</div>
+
+					<div class="row" style="margin-top: 1%">
+						<button class="col-md-2" style="margin-left: 2.5%">X</button>
+						<button class="col-md-2" style="margin-left: 1%">S</button>
+						<button class="col-md-2" style="margin-left: 1%">N</button>
+						<button class="col-md-2" style="margin-left: 1%">I</button>
+						<button class="col-md-2" style="margin-left: 1%">D</button>
+					</div>
+
+					<div class="row" style="margin-top: 1%">
+						<button class="col-md-2" style="margin-left: 2.5%">Y</button>
+						<button class="col-md-2" style="margin-left: 1%">T</button>
+						<button class="col-md-2" style="margin-left: 1%">O</button>
+						<button class="col-md-2" style="margin-left: 1%">J</button>
+						<button class="col-md-2" style="margin-left: 1%">E</button>
+					</div>
+
+					<div class="row" style="margin-top: 1%">
+						<button class="col-md-2" style="margin-left: 2.5%">Z</button>
+						<button class="col-md-6" style="margin-left: 2%">Space</button>
+						<button class="col-md-2" style="margin-left: 2%"><<--</button>
+					</div>
+				</div>
+				<table class="table" style="margin-top: 1%">
+					<thead>
+						<th>Layout</th>
+						<th>Input</th>
+						<th>Distance</th>
+						<th>NWPM</th>
+					</thead>
+					<tbody id="storage">
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./model.js"></script>
+<script>
+	var keyboard_input = '';
+	var keyboard_type = 'normal_right';
+	var keyboard_name = 'Normal Layout (Right)';
+	$('.keyboard_name').html(keyboard_name);
+	var distance_matrix = getDistanceMatrix(keyboard_type);
+	var previous_input = 0;
+	var distance = 0;
+	var nwpm = 0;
+</script>
+
+<script src="./controller.js"></script>
+<script src="./external/stopwatch.js"></script>
+
+</html>
