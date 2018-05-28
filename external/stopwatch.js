@@ -22,6 +22,8 @@ function add() {
     timer();
 
     calculateWordPerMin(total_time_in_second);
+    calculateNetWordPerMin(total_time_in_second);
+
 }
 
 function timer() {

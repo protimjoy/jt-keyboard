@@ -9,7 +9,7 @@
 	<div class="container-fluid">
 		<div class="row" style="margin-top: 3%">
 			<div class="col-md-2">
-				<a class="btn btn-primary" href="https://protimjoy.github.io/jt-keyboard/">Back</a>
+				<a class="btn btn-primary" href="./index.html">Back</a>
 				<div class="row">
 					<div class="col-md-12">
 						<h1><time>00:00:00</time></h1>
@@ -21,10 +21,19 @@
 						<h4>Distance: <span id="distance">0</span></h4>
 					</div>
 					<div class="col-md-12">
-							<h4>Net Word: <span id="net_word">0</span></h4>
+						<h4>Gross Word: <span id="gross_word">0</span></h4>
 					</div>
 					<div class="col-md-12">
-							<h4>NWPM: <span id="net_word_per_min">0</span></h4>
+						<h4>GWPM: <span id="gross_word_per_min">0</span></h4>
+					</div>
+					<div class="col-md-12">
+						<h4>KSPC: <span id="kspc">0</span></h4>
+					</div>
+					<div class="col-md-12">
+						<h4>Net Word: <span id="net_word">0</span></h4>
+					</div>
+					<div class="col-md-12">
+						<h4>NWPM: <span id="net_word_per_min">0</span></h4>
 					</div>
 				</div>
 			</div>
@@ -83,6 +92,8 @@
 						<th>Layout</th>
 						<th>Input</th>
 						<th>Distance</th>
+						<th>GWPM</th>
+						<th>KSPC</th>
 						<th>NWPM</th>
 					</thead>
 					<tbody id="storage">
@@ -100,10 +111,13 @@
 	var keyboard_name = 'Advance Layout (Right)';
 	$('.keyboard_name').html(keyboard_name);
     var distance_matrix = getDistanceMatrix(keyboard_type);
-    console.log(distance_matrix);
 	var previous_input = 0;
 	var distance = 0;
+	var gwpm = 0;
+	var kspc = 0;
+	var total_click = 0;
 	var nwpm = 0;
+	var net_word = 0;
 </script>
 
 <script src="./controller.js"></script>
